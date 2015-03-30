@@ -26,6 +26,9 @@ public class ExploreItem extends Fragment  {
         super.onCreate(savedInstanceState);
     }
 
+    public ExploreItem() {
+        // Required empty public constructor
+    }
     public static ExploreItem newInstance(String title, String path) {
         ExploreItem fragment = new ExploreItem();
         Bundle args = new Bundle();
@@ -37,12 +40,13 @@ public class ExploreItem extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.explore_item, container, false);
-        final TextView textView=(TextView)view.findViewById(R.id.explore_item_text);
+       TextView textView=(TextView)view.findViewById(R.id.explore_item_text);
         textView.setText(this.title);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onFragmentInteraction(textView.getText().toString());
+                TextView v=(TextView)view;
+                mListener.onFragmentInteraction(v.getText().toString());
             }
         });
 

@@ -20,16 +20,21 @@ public class ExploreItemDetails extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    public ExploreItemDetails()
+    {
+
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        this.title=getArguments().getString(ARG_PARAM1);
         super.onCreate(savedInstanceState);
+        this.title=getArguments().getString(ARG_PARAM1);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.explore_item_details, container, false);
-        final TextView textView=(TextView)view.findViewById(R.id.explore_item_detail_text);
+        TextView textView=(TextView)view.findViewById(R.id.explore_item_detail_text);
         textView.setText(this.title);
         return view;
     }

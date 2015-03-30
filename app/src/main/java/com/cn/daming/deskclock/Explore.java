@@ -19,11 +19,12 @@ public class Explore extends Activity implements ExploreItem.OnFragmentInteracti
 	public void onCreate(Bundle savedInstanceState) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ExploreItem fg=ExploreItem.newInstance("Food","http://www.picture.com");//title and  path just for test
-        ft.add(R.id.fragment_container, fg);
+        ft.add(R.id.fragment_container,fg);
         ft.addToBackStack(null);
         ft.commit();
+        setContentView(R.layout.explore);
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.explore);
+
 
 	}
 }
