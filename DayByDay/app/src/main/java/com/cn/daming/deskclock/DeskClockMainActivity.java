@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CursorAdapter;
 import android.widget.ImageButton;
@@ -44,6 +45,8 @@ public class DeskClockMainActivity extends Activity implements
 	private LayoutInflater mFactory;
 	private ListView mAlarmsList;
 	private Cursor mCursor;
+	private Button calendar;
+	private Button explore;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,25 @@ public class DeskClockMainActivity extends Activity implements
 	// 加载更新界面布局
 	private void updateLayout() {
 		setContentView(R.layout.alarm_clock);
+
+		calendar = (Button) findViewById(R.id.button2);
+		calendar.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				Intent intent = new Intent(DeskClockMainActivity.this,
+						MyCalendar.class);
+				startActivity(intent);
+			}
+		});
+
+		explore = (Button) findViewById(R.id.button3);
+		explore.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				Intent intent = new Intent(DeskClockMainActivity.this,
+						Explore.class);
+				startActivity(intent);
+			}
+		});
+
 		mAlarmsList = (ListView) findViewById(R.id.alarms_list);
 		AlarmTimeAdapter adapter = new AlarmTimeAdapter(this, mCursor);
 		mAlarmsList.setAdapter(adapter);
