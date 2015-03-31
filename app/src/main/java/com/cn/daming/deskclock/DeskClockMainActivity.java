@@ -47,6 +47,7 @@ public class DeskClockMainActivity extends Activity implements
 	private Cursor mCursor;
 	private Button calendar;
 	private Button explore;
+	private Button user;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +86,16 @@ public class DeskClockMainActivity extends Activity implements
 				startActivity(intent);
 			}
 		});
+		
+		user = (Button) findViewById(R.id.button4);
+		user.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				Intent intent = new Intent(DeskClockMainActivity.this,
+						User.class);
+				startActivity(intent);
+			}
+		});
+		
 
 		mAlarmsList = (ListView) findViewById(R.id.alarms_list);
 		AlarmTimeAdapter adapter = new AlarmTimeAdapter(this, mCursor);

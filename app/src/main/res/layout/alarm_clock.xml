@@ -94,28 +94,28 @@
             android:id="@+id/button1"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="日程" />
+            android:text="@string/button1" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button1"
-            android:text="日历" />
+            android:text="@string/button2" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button2"
-            android:text="发现" />
+            android:text="@string/button3" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button3"
-            android:text="个人中心" />
+            android:text="@string/button4" />
     </RelativeLayout>
 
 </LinearLayout>

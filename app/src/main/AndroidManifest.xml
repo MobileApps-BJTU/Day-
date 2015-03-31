@@ -95,6 +95,8 @@
         </activity>
         <activity android:name="Explore" >
         </activity>
+        <activity android:name="User" >
+        </activity>
 
         <!--
              This service receives the same intent as AlarmReceiver but it does
@@ -102,9 +104,7 @@
              the alert broadcast and will start this service with the same
              intent. The service plays the alarm alert and vibrates the device.
              This allows the alert to continue playing even if another activity
-             causes the AlarmAlert activity to pause.
-
-
+             causes the AlarmAlert activity to pause.
         -->
         <service
             android:name="AlarmKlaxon"
